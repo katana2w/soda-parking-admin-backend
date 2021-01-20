@@ -14,7 +14,7 @@ const getAllLinesLatLngFromDb = async (req, res) => {
     client.geocode({
             params: {
                 locations: [{ lat: 45, lng: -110 }],
-                key: 'AIzaSyC4ajJrKW25tgC94XTBGw-4F1oXZZ-NGsQ',
+                key: 'API_KEY',
             },
             timeout: 1000, // milliseconds
         })
