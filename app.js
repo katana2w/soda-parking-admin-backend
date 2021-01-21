@@ -29,17 +29,13 @@ app.use(cookieParser());
 
 app.use(cors());
 app.use('/', indexRouter);
-app.use('/users/authenticate', userAuthRouter);
-app.use('/save-line', saveLineRouter);
-app.use('/update-line', updateLineRouter);
-app.use('/remove-line', removeLineRouter);
-app.use('/all-lines', allLinesRouter);
-app.use('/all-lines-lat-lng', allLinesLatLngRouter);
-app.use('/all-scanners', allScannersRouter);
-
-// app.use('*', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/public/dashboard/index.html'));
-// });
+app.use('/api/users/authenticate', userAuthRouter);
+app.use('/api/save-line', saveLineRouter);
+app.use('/api/update-line', updateLineRouter);
+app.use('/api/remove-line', removeLineRouter);
+app.use('/api/all-lines', allLinesRouter);
+app.use('/api/all-lines-lat-lng', allLinesLatLngRouter);
+app.use('/api/all-scanners', allScannersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
