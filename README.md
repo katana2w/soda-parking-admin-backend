@@ -24,7 +24,9 @@
 - create a folder, go in this folder and clone projects from git repos
 #### Step 4 - install and build frontend:
 - go to frontend folder and run: `npm install && npm run build`
-#### Step 4 - install and run backend:
+#### Step 5 - add environment parameter:
+- in console run: `echo 'export MONGO_URI=mongodb://localhost:27017/soda-parking-line' >> ~/.bashrc`
+#### Step 6 - install and run backend:
 - go to backend folder and run: `npm install && pm2 start bin/www`
 
 ##### IMPORTANT! You should configure NGINX server:
@@ -42,7 +44,6 @@ listen [::]:80 default_server;
 }</code></pre>
 
 ### AWS config - recommended production solution:
-
 - CodeBuild - CI/CD
 - S3 bucket - For store user data and static files, also we can use s3 backer for storing FE build
 - EC2 - for backend side (setup from Elastic Beanstalk)

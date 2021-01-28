@@ -6,10 +6,8 @@ const router = express.Router();
  */
 
 const authRouter = require('./auth');
-const apisRouter = require('./apis');
 
 router.use(authRouter);
-router.use('/api/api', apisRouter);
 
 /**
  * Basic routes

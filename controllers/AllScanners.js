@@ -1,19 +1,17 @@
-/**
- * Models
- */
-// const ScannerModel = require('../models/Scanner'); // leave it for future changes
 const axios = require('axios');
-const { ALL_SCANNERS_API_URL } = require('../constants/urls');
+const {ALL_SCANNERS_API_URL} = require('../constants/urls');
 const getAllScanners = async (req, res) => {
-    console.log('GET ALL SCANNERS')
+    try {
         const allScanners = await axios.get(ALL_SCANNERS_API_URL, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-        }
-    })
-    // console.log('response', response);
-    return res.send({ message: 'Ok', response: allScanners.data});
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
+        return res.send({status: 'Ok', data: allScanners.data});
+    } catch (err) {
+        return res.send({status: 'Error', message: 'Error: get all scanners from Vodafone API.'});
+    }
 };
 
 module.exports = {

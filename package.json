@@ -20,6 +20,7 @@
     "migrate-mongo": "^8.1.4",
     "mongoose": "^5.11.6",
     "morgan": "~1.9.0",
+    "node-geometry-library": "^1.2.3",
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {

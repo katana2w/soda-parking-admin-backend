@@ -17,15 +17,10 @@ require('./database/connection');
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'public/dashboard'));
-app.set('view engine', 'pug');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(__dirname + '/public/dashboard'));
 
 app.use(cors());
 app.use('/', indexRouter);
@@ -50,9 +45,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  console.log('error', res);
-  // res.render('error');
-  return res.send({ message: 'Ok', err });
+  res.render('error');
 });
 
 module.exports = app;

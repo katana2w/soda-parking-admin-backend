@@ -1,22 +1,20 @@
 /**
- * Models
+ * Services
  */
-const LineModel = require('../models/Line');
-
+const LineService = require('../services/line');
 
 const updateLineInDB = async (req, res) => {
-    let result;
     const lineObject = req.body;
-    const { _id } = lineObject;
-    console.log('lineObject', lineObject);
-    try {
-        result = await LineModel.findOneAndUpdate({ _id }, { ...lineObject });
-        console.log('result', result);
-    } catch(err) {
-        console.log('err', err);
-        return res.send({ message: 'Error', err });
-    }
-    return res.send({ message: 'Ok', result });
+    if (!lineObject) return res.status(400).send({status: 'Error', message: 'Error: Line is required.'});
+    if (!lineObject._id ) return res.status(400).send({
+        status: 'Error',
+        message: 'Error: Line _id is required.'
+    });
+    if (!lineObject.lineName ) return res.status(400).send({
+        status: 'Error',
+        message: 'Error: Line name is required.'
+    });
+    return res.send(await LineService.update(lineObject));
 };
 
 

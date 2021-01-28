@@ -9,7 +9,7 @@ const AuthService = require('../services/auth');
 const login = async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) return res.status(400).send({ message: 'Email and password is required fields' });
-  console.log('auth controller');
+
   const user = await AuthService.login(username, password);
   if (!user) return res.status(400).send({ message: 'Password or email incorrect' });
 

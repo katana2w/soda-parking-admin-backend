@@ -1,12 +1,10 @@
 /**
- * Models
+ * Services
  */
-const LineModel = require('../models/Line');
+const LineService = require('../services/line');
 
 const getAllLinesFromDb = async (req, res) => {
-    const allLinesObject = await LineModel.find({});
-
-    return res.send({ message: 'Ok', allLinesObject });
+    return res.send(await LineService.allLines());
 };
 
 module.exports = {
