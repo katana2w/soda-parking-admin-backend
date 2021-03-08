@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const {RULES} = require('../constants');
 
 const lineSchema = new Schema({
   lineCoordinates: {
@@ -29,6 +30,12 @@ const lineSchema = new Schema({
     unique: true,
     required: true,
     lowercase: true,
+  },
+  ruleName: {
+    type: String,
+    default: RULES.RULE_A,
+    enum: [RULES.RULE_A, RULES.RULE_B, RULES.RULE_C],
+    required: true
   },
   lineId: Schema.Types.ObjectId,
   lineTolerance: {

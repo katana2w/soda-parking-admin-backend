@@ -1,0 +1,22 @@
+[
+  {
+    "ruleName" : "RULE_A",
+    "ruleRedTo" : 1,
+    "ruleYellowFrom" : 2,
+    "ruleYellowTo" : 3,
+    "ruleGreenFrom" : 4
+  },
+  {
+    "ruleName" : "RULE_B",
+    "ruleRedTo" : 1,
+    "ruleYellowFrom" : 2,
+    "ruleYellowTo" : 3,
+    "ruleGreenFrom" : 4
+  },
+  {
+    "ruleName" : "RULE_C",
+    "ruleRedTo" : 1,
+    "ruleYellowFrom" : 2,
+    "ruleYellowTo" : 3,
+    "ruleGreenFrom" : 4
+]
